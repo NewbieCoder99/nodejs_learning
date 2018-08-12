@@ -3,5 +3,5 @@ const   mysql   = require('mysql'),
 	  	conn 	= mysql.createConnection(config);
 
 exports.index = function(req, res, next) {
-	res.render('index', { title: 'Login User' });
+	res.send(req.session.userdata);
 }

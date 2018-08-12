@@ -6,5 +6,32 @@ const   mysql   = require('mysql'),
 exports.checkLogin = function(req, res, next) {
 	req.check('username','Username is required').notEmpty();
 	req.check('password','Password is required').notEmpty();
-	res.send(req.validationErrors());
+	var errors = req.validationErrors();
+	if(errors == false) {
+		conn.query('SELECT * FROM user WHERE username="' + req.body.username + '"',
+		function(err, result, fields) {
+			if(err) {
+				res.json(err);
+			} else
+			{
+				if(result.length == 1) {
+					if(result[0].password == md5(req.body.password))
+					{
+						var sess = req.session;
+						sess.userdata = result[0];
+						res.json({error : 0, message : 'Login berhasil.'});
+					} else
+					{
+						res.json({error : 1, message : 'Password salah.'});
+					}
+				} else
+				{
+					res.json({error : 1, message : 'User tidak ditemukan.'});
+				}
+			}
+		});
+	} else
+	{
+		res.json({error : 1, message : errors});
+	}
 }
