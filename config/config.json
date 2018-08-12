@@ -3,5 +3,5 @@
   "host"     : "localhost",
   "user"     : "root",
   "password" : null,
-  "database" : "pulsaan"
+  "database" : "nodejs"
 }
