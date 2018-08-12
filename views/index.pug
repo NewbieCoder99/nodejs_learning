@@ -1,0 +1,21 @@
+extends layout
+block content
+
+	div.container
+		div.row
+			h4 Login user
+			div.col.s6
+				div.input-field.col.s12
+					i.material-icons.prefix person
+					input(type='text', id='user')
+					label(for='user') User
+			div.col.s6
+				div.input-field.col.s12
+					i.material-icons.prefix lock
+					input(type='password', id='password')
+					label(for='password') Password
+			div.col.s6
+				button.waves-effect.waves-light.btn#login_btn Login
+					i.material-icons.left verified_user
+
+	script(type='text/javascript', src='/assets/custom/js/login.min.js')
