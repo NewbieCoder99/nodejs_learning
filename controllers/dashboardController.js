@@ -1,3 +1,7 @@
 exports.index = function(req, res, next) {
-	res.send(req.session.userdata);
+	if(req.session.userdata != null) {
+		res.render('dashboard', { title: 'Dashboard admin', sess : req.session.userdata });
+	} else {
+		res.redirect('/');
+	}
 }
