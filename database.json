@@ -1,0 +1,11 @@
+{
+  "dev": {
+    "host": "localhost",
+    "user": "root",
+    "password" : "",
+    "database": "nodejs",
+    "driver": "mysql",
+    "connectionLimit" : 10,
+    "multipleStatements": true
+  }
+}

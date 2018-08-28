@@ -1,14 +1,14 @@
 const   mysql   = require('mysql'),
-	  	config  = require('../../config/config.json'),
+	  	config  = require('../../database.json'),
 	  	md5 	= require('md5'),
-	  	conn 	= mysql.createConnection(config);
+	  	conn 	= mysql.createConnection(config.dev);
 
 exports.checkLogin = function(req, res, next) {
 	req.check('username','Username is required').notEmpty();
 	req.check('password','Password is required').notEmpty();
 	var errors = req.validationErrors();
 	if(errors == false) {
-		conn.query('SELECT * FROM user WHERE username="' + req.body.username + '"',
+		conn.query('SELECT * FROM users WHERE username="' + req.body.username + '"',
 		function(err, result, fields) {
 			if(err) {
 				res.json(err);
