@@ -1,13 +1,14 @@
-const 	createError = require('http-errors'),
-		express = require('express'),
-		path = require('path'),
-		cookieParser = require('cookie-parser'),
-		logger = require('morgan'),
-		web = require('./routes/web'),
-		api = require('./routes/api'),
-		expressValidator = require('express-validator'),
-		expressSession = require('express-session'),
-		app = express();
+const 	createError            = require('http-errors'),
+        express 			         = require('express'),
+        path                   = require('path'),
+        cookieParser 		       = require('cookie-parser'),
+        logger 				         = require('morgan'),
+        web 				           = require('./routes/web'),
+        api 				           = require('./routes/api'),
+        expressValidator 	     = require('express-validator'),
+        expressSession 		     = require('express-session'),
+        db					           = require('./config/database'),
+        app 				           = express();
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -24,6 +25,13 @@ app.use(expressSession({
 	saveUninitialized: false,
 	resave : false
 }));
+
+db.sync().then(() => {
+	console.log('Connection has been established successfully.');
+}).catch(err => {
+	console.error('Unable to connect to the database:', err);
+});
+
 
 app.use('/', web);
 app.use('/api', api);

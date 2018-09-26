@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "bluebird": "^3.5.2",
     "cookie-parser": "~1.4.3",
     "db-migrate": "^0.11.1",
     "db-migrate-mysql": "^1.1.10",
@@ -20,6 +21,7 @@
     "morgan": "~1.9.0",
     "mysql": "^2.16.0",
     "mysql2": "^1.6.1",
+    "nodemon": "^1.18.4",
     "pg": "^6.4.2",
     "pg-hstore": "^2.3.2",
     "pug": "2.0.0-beta11",
