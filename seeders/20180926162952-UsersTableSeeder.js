@@ -9,17 +9,17 @@ module.exports = {
       return queryInterface.bulkInsert('users',
       [
         {
-          name: 'Qudrat Nurfajar Yasin Sutisna',
-          username : 'qudrat99',
-          password :  crypto.createHmac('sha256', secret)
+          name      : 'Qudrat Nurfajar Yasin Sutisna',
+          username  : 'qudrat99',
+          password  :  crypto.createHmac('sha256', secret)
                       .update('password').digest('hex'),
           createdAt : new Date(),
           updatedAt : new Date()
         },
         {
-          name: 'Qudrat Nurfajar Yasin Sutisna',
-          username : 'admin',
-          password :  crypto.createHmac('sha256', secret)
+          name      : 'Aira Airaha',
+          username  : 'admin',
+          password  :  crypto.createHmac('sha256', secret)
                       .update('password').digest('hex'),
           createdAt : new Date(),
           updatedAt : new Date()
