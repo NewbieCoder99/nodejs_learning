@@ -1,0 +1,24 @@
+extends ../layouts/layout_login
+block content
+	div.row
+		div.col-lg-6
+			img(src="/assets/images/icon-plane.png", alt="")
+		div.col-lg-6.p-t-100
+			div.text-white
+				h1
+					i.icon-lock  Login Administrator
+				p.s-18.p-t-b-20.font-weight-lighter
+					| Aplikasi POS (Point Of Sale)
+				.row
+					.col-lg-6
+						.form-group.has-icon
+							i.icon-envelope-o
+							input.form-control.form-control-lg.no-b(type='text', placeholder='Email Address', id="user")
+					.col-lg-6
+						.form-group.has-icon
+							i.icon-user-secret
+							input.form-control.form-control-lg.no-b(type='password', placeholder='Password', id="password")
+					.col-lg-12
+						input.btn.btn-success.btn-lg.btn-block(type='button', value='Login', id="login_btn")
+						p.forget-pass.text-white
+							| Have you forgot your username or password ?

@@ -1,13 +1,50 @@
 doctype html
-html
-  head
-    title= title
-    link(rel='stylesheet', href='/assets/materialize/dist/css/materialize.min.css')
-    link(href='//fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-  body
-    div.container
-        block content
-    script(type='text/javascript', src='/assets/custom/js/jquery-2.2.0.min.js')
-    script(type='text/javascript', src='/assets/materialize/dist/js/materialize.min.js')
-    block scripts
+html(lang="en")
+	head
+		title #{title}
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+		meta(name='description', content='')
+		meta(name='author', content='')
+		link(rel='stylesheet', href='/assets/bootstrap/css/app.css')
+		link(rel='stylesheet', href='/assets/custom/css/custom.css')
+	body.light.sidebar-mini.sidebar-collapse
+		#loader.loader
+			.plane-container
+				.preloader-wrapper.small.active
+					.spinner-layer.spinner-blue
+						.circle-clipper.left
+							.circle
+						.gap-patch
+							.circle
+						.circle-clipper.right
+							.circle
+					.spinner-layer.spinner-red
+						.circle-clipper.left
+							.circle
+						.gap-patch
+							.circle
+						.circle-clipper.right
+							.circle
+					.spinner-layer.spinner-yellow
+						.circle-clipper.left
+							.circle
+						.gap-patch
+							.circle
+						.circle-clipper.right
+							.circle
+					.spinner-layer.spinner-green
+						.circle-clipper.left
+							.circle
+						.gap-patch
+							.circle
+						.circle-clipper.right
+							.circle
+		div#app
+			main
+				.blue4.p-t-b-100.height-full.responsive-phone
+					.container
+						block content
+		.control-sidebar-bg.shadow.white.fixed
+		script(type='text/javascript', src='/assets/bootstrap/js/app.js')
+		script(type='text/javascript', src='/assets/custom/js/login.min.js')
