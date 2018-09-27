@@ -6,3 +6,6 @@
 
 # About Promise
 <a href="//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">About Promise</a>
+
+# HTML To PUG Generator
+<a href="//pughtml.com">HTML To PUG Generator</a>
