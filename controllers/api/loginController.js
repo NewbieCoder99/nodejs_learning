@@ -1,9 +1,9 @@
 'use strict';
 
-const   md5 	= require('md5'),
+const 	crypto 	= require('crypto'),
+      	dotenv 	= require('dotenv').config(),
 		Model 	= require('../../models'),
-		Users 	= Model.user,
-		Books 	= Model.books;
+		secret 	= process.env.PASSWORD_SECRET;
 
 exports.checkLogin = function(req, res, next) {
 
@@ -15,12 +15,30 @@ exports.checkLogin = function(req, res, next) {
 	if(errors == false) {
 
 		var getUser = new Promise(function(resolve) {
-			Users.findAll().then(users => resolve(users))
+			Model.User.findOne({
+				where: {
+					username : req.body.username,
+					password : crypto.createHmac('sha256', secret)
+							   .update(req.body.password).digest('hex'),
+				}
+			}).then(users => resolve(users))
 		});
 
-		/* ========== All Promise Sample ========== */
-		Promise.all([getUser]).then(function(values) {
-		  res.json({users : values[0] } );
+		getUser.then(function(cb) {
+
+			if(cb == null) {
+				res.json({
+					error  : 1,
+					message : ["User tidak ditemukan."],
+					result : null
+				});
+			} else {
+				res.json({
+					error  : 0,
+					message : "Login berhasil.",
+					result : null
+				});
+			}
 		});
 
 	} else {
