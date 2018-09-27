@@ -2,7 +2,7 @@
 
 const 	crypto 	= require('crypto'),
       	dotenv 	= require('dotenv').config(),
-		Model 	= require('../../models'),
+		model 	= require('../../models'),
 		secret 	= process.env.PASSWORD_SECRET;
 
 exports.checkLogin = function(req, res, next) {
@@ -15,7 +15,7 @@ exports.checkLogin = function(req, res, next) {
 	if(errors == false) {
 
 		var getUser = new Promise(function(resolve) {
-			Model.User.findOne({
+			model.User.findOne({
 				where: {
 					username : req.body.username,
 					password : crypto.createHmac('sha256', secret)
