@@ -20,13 +20,15 @@ exports.checkLogin = function(req, res, next) {
 					username : req.body.username,
 					password : crypto.createHmac('sha256', secret)
 							   .update(req.body.password).digest('hex'),
-				}
-			}).then(users => resolve(users))
+				},
+				include : [
+					{ model : model.Role_users }
+				]
+			}).then(callBack => resolve(callBack))
 		});
 
-		getUser.then(function(cb) {
-
-			if(cb == null) {
+		getUser.then(function(callBack) {
+			if(callBack == null) {
 				res.json({
 					error  : 1,
 					message : ["User tidak ditemukan."],
@@ -34,9 +36,9 @@ exports.checkLogin = function(req, res, next) {
 				});
 			} else {
 				res.json({
-					error  : 0,
+					error  : 1,
 					message : "Login berhasil.",
-					result : null
+					result : callBack
 				});
 			}
 		});

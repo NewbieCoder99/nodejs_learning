@@ -25,6 +25,11 @@ fs
     db[model.name] = model;
   });
 
+// const db = {
+//   User : sequelize.import('./user'),
+//   RoleUser : sequelize.import('./role_users'),
+// }
+
 Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) {
     db[modelName].associate(db);

@@ -2,17 +2,11 @@
 module.exports = (sequelize, DataTypes) => {
 
 	const Role_users = sequelize.define('Role_users', {
-		userId: {
-			type : DataTypes.INTEGER,
-			references: {
-			  model: "Users",
-			  key: "id"
-			}
-		},
+		userId: DataTypes.INTEGER,
 		roleId: DataTypes.INTEGER
 	}, {});
 	Role_users.associate = function(models) {
-		// TODO
+		Role_users.hasOne(models.Roles);
 	};
 	return Role_users;
 };
