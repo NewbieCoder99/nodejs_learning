@@ -1,10 +1,7 @@
 extends ../layouts/layout_adminpanel
 block content
-	.container-fluid
-		.text-center.p-5
-			i.icon-note-important.s-64.text-primary
-			h4.my-3 No Products Founds
-			p You have not added any product add first product now
-			a.btn.btn-primary.shadow.btn-lg(href='#')
-				i.icon-plus-circle.mr-2
-				| Add New Product
+	.container-fluid.relative.animatedParent.animateOnce.my-3
+		.invoice.white.shadow
+			.p-5
+				.row
+					.col-lg-12.col-md-12.col-xs-12.col-sm-12

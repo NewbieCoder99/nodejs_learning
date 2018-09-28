@@ -8,6 +8,7 @@ const 	createError            = require('http-errors'),
         expressValidator 	     = require('express-validator'),
         expressSession 		     = require('express-session'),
         db					           = require('./config/database'),
+        dotenv                 = require('dotenv').config(),
         app 				           = express();
 
 app.use(logger('dev'));
@@ -21,7 +22,7 @@ app.set('view engine', 'pug');
 
 app.use(expressValidator());
 app.use(expressSession({
-	secret : 'TrySession',
+	secret : process.env.PASSWORD_SECRET,
 	saveUninitialized: false,
 	resave : false
 }));
@@ -31,7 +32,6 @@ db.sync().then(() => {
 }).catch(err => {
 	console.error('Unable to connect to the database:', err);
 });
-
 
 app.use('/', web);
 app.use('/api', api);
