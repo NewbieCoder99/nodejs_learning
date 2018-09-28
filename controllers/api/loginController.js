@@ -33,6 +33,9 @@ exports.checkLogin = function(req, res, next) {
 		});
 
 		getUser.then(function(callBack) {
+
+			req.session.userdata = JSON.stringify(callBack);
+
 			if(callBack == null) {
 				res.json({
 					error  : 1,
@@ -41,9 +44,9 @@ exports.checkLogin = function(req, res, next) {
 				});
 			} else {
 				res.json({
-					error  : 1,
+					error  	: 0,
 					message : "Login berhasil.",
-					result : callBack
+					result 	: req.session.userdata
 				});
 			}
 		});
