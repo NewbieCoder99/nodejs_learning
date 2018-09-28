@@ -2,12 +2,11 @@
 * @Author: Newbie Coder
 * @Date:   2018-09-26 01:56:13
 * @Last Modified by:   Newbie Coder
-* @Last Modified time: 2018-09-26 08:07:55
+* @Last Modified time: 2018-09-28 23:54:16
 */
 'use strict';
 
 var Sequelize 	= require('sequelize'),
-	dotenv 		= require('dotenv').config(),
 	dbname 		= process.env.DB_NAME,
 	dbusername 	= process.env.DB_USERNAME,
 	dbpassword  = process.env.DB_PASSWORD,

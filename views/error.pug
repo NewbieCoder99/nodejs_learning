@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='I Love NodeJS')
+    meta(name='author', content='Qudrat Nurfajar Yasin Sutisna')
+    title #{title} #{message}
+    link(rel='stylesheet', href='/assets/bootstrap/css/app.css')
+  body.light.sidebar-mini.sidebar-collapse
+    include includes/preloader
+    #app
+      main.parallel
+        .row.grid
+          .col-md-6.col-xs-12.col-sm-12.col-lg-6.white
+            .p-5
+              .p-5
+                .text-center.p-t-100
+                  center
+                    p.s-128.bolder.p-t-b-100 Opps!
+                    p.s-18 oh dear! you are lost don't try to hard.
+                    .p-t-b-20
+                      a.btn.btn-outline-primary.btn-lg(href="/")
+                        i.icon.icon-arrow_back Go Back To Home
+          .col-md-6.col-xs-12.col-sm-12.col-lg-6.height-full(data-bg-repeat="false" data-bg-possition="center" style="background: url('/assets/images/cs3.gif') #FFEFE4")
+    script(src="/assets/bootstrap/js/app.js")
