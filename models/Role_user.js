@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
 		roleId: DataTypes.INTEGER
 	}, {});
 	Role_users.associate = function(models) {
-		Role_users.hasOne(models.Roles);
+		Role_users.belongsTo(models.Roles);
 	};
 	return Role_users;
 };

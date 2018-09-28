@@ -22,7 +22,12 @@ exports.checkLogin = function(req, res, next) {
 							   .update(req.body.password).digest('hex'),
 				},
 				include : [
-					{ model : model.Role_users }
+					{ 
+						model : model.Role_users,
+						include : [{
+							model : model.Roles
+						}]
+					}
 				]
 			}).then(callBack => resolve(callBack))
 		});

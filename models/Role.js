@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     role_name: DataTypes.STRING
   }, {});
   Roles.associate = function(models) {
-    Roles.hasMany(models.Role_users);
+    // Roles.belongsTo(models.Role_users);
   };
   return Roles;
 };

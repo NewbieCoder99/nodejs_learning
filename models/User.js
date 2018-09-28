@@ -5,8 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     password 	: DataTypes.STRING,
     email 		: DataTypes.STRING
   }, {});
-  Users.associate = function(models) {
-  	Users.hasOne(models.Role_users);
-  };
+  	Users.associate = function(models) {
+  		Users.hasOne(models.Role_users);
+  	};
   return Users;
 };
