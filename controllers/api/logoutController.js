@@ -7,7 +7,7 @@ exports.index = function(req, res, next) {
 	}
 
 	if(req.xhr == true) {
-		return res.json({error : 0, message : 'Logout berhasil.'});
+		return res.json( {error : 0, message : 'Logout berhasil.'} );
 	}
 
 	return res.redirect("/");
