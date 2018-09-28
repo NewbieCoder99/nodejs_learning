@@ -1,0 +1,487 @@
+aside.main-sidebar.fixed.offcanvas.b-r.sidebar-tabs(data-toggle='offcanvas')
+  .sidebar
+    .d-flex.hv-100.align-items-stretch
+      .indigo.text-white
+        #v-pills-tab.nav.mt-5.pt-5.flex-column.nav-pills(role='tablist', aria-orientation='vertical')
+          a#v-pills-home-tab.nav-link(data-toggle='pill', href='#v-pills-home', role='tab', aria-controls='v-pills-home', aria-selected='true')
+            i.icon-inbox2
+          a#v-pills-profile-tab.nav-link(data-toggle='pill', href='#v-pills-profile', role='tab', aria-controls='v-pills-profile', aria-selected='false')
+            i.icon-add
+          a.nav-link.blink.skin_handle(href='#')
+            i.icon-lightbulb_outline
+          a#v-pills-messages-tab.nav-link(href='#')
+            i.icon-message
+          a#v-pills-settings-tab.nav-link(href='#')
+            i.icon-settings
+          a(href='')
+            figure.avatar
+              img(src='/assets/images/u8.png', alt='')
+              span.avatar-badge.online
+
+      #v-pills-tabContent.tab-content.flex-grow-1
+
+        #v-pills-home.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='v-pills-home-tab')
+          .relative.brand-wrapper.sticky.b-b
+            .d-flex.justify-content-between.align-items-center.p-3
+              .text-xs-center
+                span.font-weight-lighter.s-18 Menu
+              .badge.badge-danger.r-0 New Panel
+          ul.sidebar-menu
+            li.treeview
+              a(href='index.html')
+                i.icon.icon-sailing-boat-water.s-24
+                span Dashboard
+            li.treeview
+              a(href='#')
+                i.icon.icon.icon-package.s-24
+                span Products
+                span.badge.r-3.badge-primary.pull-right 4
+              ul.treeview-menu
+                li
+                  a(href='panel-page-products.html')
+                    i.icon.icon-circle-o
+                    | All Products
+                li
+                  a(href='panel-page-products-create.html')
+                    i.icon.icon-add
+                    | Add New
+            li.treeview
+              a(href='#')
+                i.icon.icon-account_box.s-24
+                | Users
+                i.icon-angle-left.pull-right
+              ul.treeview-menu
+                li
+                  a(href='panel-page-users.html')
+                    i.icon.icon-circle-o
+                    | All Users
+                li
+                  a(href='panel-page-users-create.html')
+                    i.icon.icon-add
+                    | Add User
+                li
+                  a(href='panel-page-profile.html')
+                    i.icon.icon-user
+                    | User Profile
+            li.treeview
+              a(href='#')
+                i.icon.icon-package.s-24
+                i.icon-angle-left.pull-right
+                span Inbox
+              ul.treeview-menu
+                li
+                  a(href='inbox.html')
+                    i.icon.icon-circle-o
+                    | Inbox
+                li
+                  a(href='inbox2.html')
+                    i.icon.icon-circle-o
+                    | Inbox 2
+                li
+                  a(href='inbox-create.html')
+                    i.icon.icon-add
+                    | Compose
+            li.treeview
+              a(href='#')
+                i.icon.icon-package.s-24
+                span Apps
+                i.icon-angle-left.pull-right
+              ul.treeview-menu
+                li
+                  a(href='chat.html')
+                    i.icon.icon-circle-o
+                    | Chat
+                li
+                  a(href='tasks.html')
+                    i.icon.icon-circle-o
+                    | Tasks / Todo
+                li
+                  a(href='calendar.html')
+                    i.icon.icon-date_range
+                    | Calender
+                li
+                  a(href='contacts.html')
+                    i.icon.icon-circle-o
+                    | Contacts
+                li
+                  a(href='projects.html')
+                    i.icon.icon-circle-o
+                    | Projects
+                li
+                  a(href='projects-list.html')
+                    i.icon.icon-circle-o
+                    | Projects List
+            li.treeview
+              a(href='#')
+                i.icon.icon-documents3.s-24
+                span Pages
+                i.icon-angle-left.pull-right
+              ul.treeview-menu
+                li
+                  a(href='#')
+                    i.icon.icon-documents3
+                    | Blank Pages
+                    i.icon-angle-left.pull-right
+                  ul.treeview-menu
+                    li
+                      a(href='panel-page-blank.html')
+                        i.icon.icon-document
+                        | Simple
+                        | &#x9;&#x9;                                            Blank
+                    li
+                      a(href='panel-page-blank-tabs.html')
+                        i.icon.icon-document
+                        | Tabs
+                        | &#x9;&#x9;                                            Blank 
+                        i.icon-angle-left.pull-right
+                li
+                  a(href='#')
+                    i.icon.icon-fingerprint.text-green
+                    | Auth Pages
+                    i.icon-angle-left.pull-right
+                  ul.treeview-menu
+                    li
+                      a(href='login.html')
+                        i.icon.icon-document
+                        | Login Page 1
+                    li
+                      a(href='login-2.html')
+                        i.icon.icon-document
+                        | Login Page 2
+                    li
+                      a(href='login-3.html')
+                        i.icon.icon-document
+                        | Login Page 3
+                    li
+                      a(href='login-4.html')
+                        i.icon.icon-document
+                        | Login Page 4
+                li
+                  a(href='#')
+                    i.icon.icon-bug.text-red
+                    | Error Pages
+                    i.icon-angle-left.pull-right
+                  ul.treeview-menu
+                    li
+                      a(href='panel-page-404.html')
+                        i.icon.icon-document
+                        | 404 Page
+                    li
+                      a(href='panel-page-500.html')
+                        i.icon.icon-document
+                        | 500 Page
+                        i.icon-angle-left.pull-right
+                    li
+                      a(href='panel-page-error.html')
+                        i.icon.icon-document
+                        | 420 Page
+                        i.icon-angle-left.pull-right
+                li
+                  a(href='#')
+                    i.icon.icon-documents3
+                    | Other Pages
+                    i.icon-angle-left.pull-right
+                  ul.treeview-menu
+                    li
+                      a(href='panel-page-invoice.html')
+                        i.icon.icon-document
+                        | Invoice
+                        | &#x9;&#x9;                                            Page
+                    li
+                      a(href='panel-page-no-posts.html')
+                        i.icon.icon-document
+                        | No Post
+                        | &#x9;&#x9;                                            Page
+            li.treeview
+              a(href='#')
+                i.icon.icon-goals-1.s-24
+                span Elements
+                i.icon-angle-left.pull-right
+              ul.treeview-menu
+                li
+                  a(href='panel-element-widgets.html')
+                    i.icon.icon-widgets.amber-text.s-14
+                    span Widgets
+                li
+                  a(href='panel-element-counters.html')
+                    i.icon.icon-filter_9_plus.amber-text.s-14
+                    span Counters
+                li
+                  a(href='panel-element-buttons.html')
+                    i.icon.icon-touch_app.amber-text.s-14
+                    span Buttons
+                li
+                  a(href='panel-element-typography.html')
+                    i.icon.icon-text-width.amber-text.s-14
+                    span Typography
+                li
+                  a(href='panel-element-tabels.html')
+                    i.icon.icon-table.amber-text.s-14
+                    span Tables
+                li
+                  a(href='panel-element-alerts.html')
+                    i.icon.icon-exclamation-circle.amber-text.s-14
+                    span Alerts
+                li
+                  a(href='panel-element-slider.html')
+                    i.icon.icon-view_carousel.amber-text.s-14
+                    span Slider
+                li
+                  a(href='panel-element-tabs.html')
+                    i.icon.icon-folders2.amber-text.s-14
+                    span Tabs
+                li
+                  a(href='panel-element-progress-bars.html')
+                    i.icon.icon-folders2.amber-text.s-14
+                    span Progress Bars
+                li
+                  a(href='panel-element-badges.html')
+                    i.icon.icon-flag7.amber-text.s-14
+                    span Badges
+                li
+                  a(href='panel-element-preloaders.html')
+                    i.icon.icon-data_usage.amber-text.s-14
+                    span Preloaders
+            li.treeview
+              a(href='#')
+                i.icon.icon-wpforms.s-24
+                span Forms &amp; Plugins
+                i.icon-angle-left.pull-right
+              ul.treeview-menu
+                li
+                  a(href='panel-element-forms.html')
+                    i.icon.icon-wpforms.light-green-text
+                    | Bootstrap
+                    | &#x9;&#x9;                                    Inputs
+                li
+                  a(href='form-jquery-validations.html')
+                    i.icon.icon-note-important.light-green-text
+                    | &#x9;&#x9;                                    Form Validation (Jquery)
+                li
+                  a(href='form-bootstrap-validations.html')
+                    i.icon.icon-note-important.light-green-text
+                    | &#x9;&#x9;                                    Form Validation (Bootstrap)
+                li
+                  a(href='panel-element-editor.html')
+                    i.icon.icon-pen2.light-green-text
+                    | Editor
+                li
+                  a(href='panel-element-toast.html')
+                    i.icon.icon-notifications_active.light-green-text
+                    | Toasts
+                li
+                  a(href='panel-element-stepper.html')
+                    i.icon.icon-burst_mode.light-green-text
+                    | Stepper
+                li
+                  a(href='panel-element-date-time-picker.html')
+                    i.icon.icon-date_range.light-green-text
+                    | Date Time Picker
+                li
+                  a(href='panel-element-color-picker.html')
+                    i.icon.icon-adjust.light-green-text
+                    | Color
+                    | &#x9;&#x9;                                    Picker
+                li
+                  a(href='panel-element-range-slider.html')
+                    i.icon.icon-space_bar.light-green-text
+                    | Range
+                    | &#x9;&#x9;                                    Slider
+                li
+                  a(href='panel-element-select2.html')
+                    i.icon.icon-one-finger-click.light-green-text
+                    | Select 2
+                li
+                  a(href='panel-element-tags.html')
+                    i.icon.icon-tags3.light-green-text
+                    | Tags
+                li
+                  a(href='panel-element-data-tables.html')
+                    i.icon.icon-table.light-green-text
+                    | Data
+                    | &#x9;&#x9;                                    Tables
+            li.treeview
+              a(href='#')
+                i.icon.icon-bar-chart2.s-24
+                span Charts
+                i.icon-angle-left.pull-right
+              ul.treeview-menu
+                li
+                  a(href='panel-element-charts-js.html')
+                    i.icon.icon-area-chart.pink-text.s-14
+                    span Charts.Js
+                li
+                  a(href='panel-element-morris.html')
+                    i.icon.icon-bubble_chart.pink-text.s-14
+                    | Morris
+                    | &#x9;&#x9;                                        Charts
+                li
+                  a(href='panel-element-echarts.html')
+                    i.icon.icon-bar-chart-o.pink-text.s-14
+                    | Echarts
+                li
+                  a(href='panel-element-easy-pie-charts.html')
+                    i.icon.icon-area-chart.pink-text.s-14
+                    | Easy Pie Charts
+                li
+                  a(href='panel-element-jqvmap.html')
+                    i.icon.icon-map.pink-text.s-14
+                    | Jqvmap
+                li
+                  a(href='panel-element-sparklines.html')
+                    i.icon.icon-line-chart2.pink-text.s-14
+                    | Sparklines
+                li
+                  a(href='panel-element-float.html')
+                    i.icon.icon-pie-chart.pink-text.s-14
+                    | Float Charts
+            li.treeview
+              a(href='#')
+                i.icon.icon-dialpad.s-24
+                span Extra
+                i.icon-angle-left.pull-right
+              ul.treeview-menu
+                li
+                  a(href='panel-element-letters.html')
+                    i.icon.icon-brightness_auto.light-blue-text.s-14
+                    span Avatar Placeholders
+                li
+                  a(href='panel-element-icons.html')
+                    i.icon.icon-camera2.light-blue-text.s-14
+                    span Icons
+                li
+                  a(href='panel-element-colors.html')
+                    i.icon.icon-palette.light-blue-text.s-14
+                    span Colors
+
+        #v-pills-profile.tab-pane.fade(role='tabpanel', aria-labelledby='v-pills-profile-tab')
+          .relative.brand-wrapper.sticky.b-b.p-3
+            form
+              .form-group.input-group-sm.has-right-icon
+                input.form-control.form-control-sm.light.r-30(placeholder='Search', type='text')
+                i.icon-search
+          .sticky.slimScroll
+            .p-2
+              ul.list-unstyled
+                // Alphabet with number of contacts
+                li.pt-3.pb-3.sticky.p-3.b-b.white
+                  span.badge.r-3.badge-success A
+                // Single contact
+                li.my-1
+                  .card.no-b.p-3
+                    div
+                      .image.mr-3.float-left
+                        img.w-40px(src='/assets/images/u8.png', alt='User Image')
+                      div
+                        div
+                          strong Alexander Pierce
+                        small  alexander@paper.com
+                li.my-1
+                  .card.no-b.p-3
+                    div
+                      .image.mr-3.float-left
+                        img.w-40px(src='/assets/images/u8.png', alt='User Image')
+                      div
+                        div
+                          strong Alexander Pierce
+                        small  alexander@paper.com
+                li.my-1
+                  .card.no-b.p-3
+                    div
+                      .image.mr-3.float-left
+                        img.w-40px(src='/assets/images/u8.png', alt='User Image')
+                      div
+                        div
+                          strong Alexander Pierce
+                        small  alexander@paper.com
+              ul.list-unstyled
+                li.pt-3.pb-3.sticky.p-3.b-b.white
+                  span.badge.r-3.badge-danger B
+                li.my-1
+                  .card.no-b.p-3
+                    div
+                      .image.mr-3.float-left
+                        img.w-40px(src='/assets/images/u8.png', alt='User Image')
+                      div
+                        div
+                          strong Alexander Pierce
+                        small  alexander@paper.com
+                li.my-1
+                  .card.no-b.p-3
+                    div
+                      .image.mr-3.float-left
+                        img.w-40px(src='/assets/images/u8.png', alt='User Image')
+                      div
+                        div
+                          strong Alexander Pierce
+                        small  alexander@paper.com
+                li.my-1
+                  .card.no-b.p-3
+                    div
+                      .image.mr-3.float-left
+                        img.w-40px(src='/assets/images/u8.png', alt='User Image')
+                      div
+                        div
+                          strong Alexander Pierce
+                        small  alexander@paper.com
+              ul.list-unstyled
+                // Alphabet with number of contacts
+                li.pt-3.pb-3.sticky.p-3.b-b.white
+                  span.badge.r-3.badge-success.gradient C
+                // Single contact
+                li.my-1
+                  .card.no-b.p-3
+                    div
+                      .image.mr-3.float-left
+                        img.w-40px(src='/assets/images/u8.png', alt='User Image')
+                      div
+                        div
+                          strong Alexander Pierce
+                        small  alexander@paper.com
+                li.my-1
+                  .card.no-b.p-3
+                    div
+                      .image.mr-3.float-left
+                        img.w-40px(src='/assets/images/u8.png', alt='User Image')
+                      div
+                        div
+                          strong Alexander Pierce
+                        small  alexander@paper.com
+                li.my-1
+                  .card.no-b.p-3
+                    div
+                      .image.mr-3.float-left
+                        img.w-40px(src='/assets/images/u8.png', alt='User Image')
+                      div
+                        div
+                          strong Alexander Pierce
+                        small  alexander@paper.com
+                li.my-4
+                  span.badge.r-3.badge-danger.purple D
+                li.my-1
+                  .card.no-b.p-3
+                    div
+                      .image.mr-3.float-left
+                        img.w-40px(src='/assets/images/u8.png', alt='User Image')
+                      div
+                        div
+                          strong Alexander Pierce
+                        small  alexander@paper.com
+                li.my-1
+                  .card.no-b.p-3
+                    div
+                      .image.mr-3.float-left
+                        img.w-40px(src='/assets/images/u8.png', alt='User Image')
+                      div
+                        div
+                          strong Alexander Pierce
+                        small  alexander@paper.com
+                li.my-1
+                  .card.no-b.p-3
+                    div
+                      .image.mr-3.float-left
+                        img.w-40px(src='/assets/images/u8.png', alt='User Image')
+                      div
+                        div
+                          strong Alexander Pierce
+                        small  alexander@paper.com

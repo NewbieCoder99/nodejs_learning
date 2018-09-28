@@ -1,0 +1,103 @@
+aside.control-sidebar.fixed.white
+  .slimScroll
+    .sidebar-header
+      h4 Activity List
+      a.paper-nav-toggle.active(href='#', data-toggle='control-sidebar')
+        i
+    .p-3
+      div
+        .my-3
+          small 25% Complete
+          .progress(style='height: 3px;')
+            .progress-bar.bg-success(role='progressbar', style='width: 25%;', aria-valuenow='25', aria-valuemin='0', aria-valuemax='100')
+        .my-3
+          small 45% Complete
+          .progress(style='height: 3px;')
+            .progress-bar.bg-info(role='progressbar', style='width: 45%;', aria-valuenow='45', aria-valuemin='0', aria-valuemax='100')
+        .my-3
+          small 60% Complete
+          | &#x9;&#x9;                    &grave;
+          .progress(style='height: 3px;')
+            .progress-bar.bg-warning(role='progressbar', style='width: 60%;', aria-valuenow='60', aria-valuemin='0', aria-valuemax='100')
+        .my-3
+          small 75% Complete
+          .progress(style='height: 3px;')
+            .progress-bar.bg-danger(role='progressbar', style='width: 75%;', aria-valuenow='75', aria-valuemin='0', aria-valuemax='100')
+        .my-3
+          small 100% Complete
+          .progress(style='height: 3px;')
+            .progress-bar(role='progressbar', style='width: 100%;', aria-valuenow='100', aria-valuemin='0', aria-valuemax='100')
+    .p-3.bg-primary.text-white
+      .row
+        .col-md-6
+          h5.font-weight-normal.s-14 Sodium
+          span.font-weight-lighter.text-primary Spark Bar
+          div
+            | Oxygen
+            span.text-primary
+              i.icon.icon-arrow_downward
+              |  67%
+        .col-md-6
+          canvas(width='100', height='70', data-chart='spark', data-chart-type='bar', data-dataset='[[28,68,41,43,96,45,100,28,68,41,43,96,45,100,28,68,41,43,96,45,100,28,68,41,43,96,45,100]]', data-labels="['a','b','c','d','e','f','g','h','i','j','k','l','m','n','a','b','c','d','e','f','g','h','i','j','k','l','m','n']")
+    .table-responsive
+      table#recent-orders.table.table-hover.mb-0.ps-container.ps-theme-default
+        tbody
+          tr
+            td
+              a(href='#') INV-281281
+            td
+              span.badge.badge-success Paid
+            td $ 1228.28
+          tr
+            td
+              a(href='#') INV-01112
+            td
+              span.badge.badge-warning Overdue
+            td $ 5685.28
+          tr
+            td
+              a(href='#') INV-281012
+            td
+              span.badge.badge-success Paid
+            td $ 152.28
+          tr
+            td
+              a(href='#') INV-01112
+            td
+              span.badge.badge-warning Overdue
+            td $ 5685.28
+          tr
+            td
+              a(href='#') INV-281012
+            td
+              span.badge.badge-success Paid
+            td $ 152.28
+    .sidebar-header
+      h4 Activity
+      a.paper-nav-toggle.active(href='#', data-toggle='control-sidebar')
+        i
+    .p-4
+      .activity-item.activity-primary
+        .activity-content
+          small.text-muted
+            i.icon.icon-user.position-left
+            |  5 mins ago
+          p Lorem ipsum dolor sit amet conse ctetur which ascing elit users.
+      .activity-item.activity-danger
+        .activity-content
+          small.text-muted
+            i.icon.icon-user.position-left
+            |  8 mins ago
+          p Lorem ipsum dolor sit ametcon the sectetur that ascing elit users.
+      .activity-item.activity-success
+        .activity-content
+          small.text-muted
+            i.icon.icon-user.position-left
+            |  10 mins ago
+          p Lorem ipsum dolor sit amet cons the ecte tur and adip ascing elit users.
+      .activity-item.activity-warning
+        .activity-content
+          small.text-muted
+            i.icon.icon-user.position-left
+            |  12 mins ago
+          p Lorem ipsum dolor sit amet consec tetur adip ascing elit users.

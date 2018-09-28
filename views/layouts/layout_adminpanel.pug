@@ -1,0 +1,21 @@
+doctype html
+html
+	head
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+		meta(name='description', content='')
+		meta(name='author', content='')
+		title #{title}
+		link(rel='stylesheet', href='/assets/bootstrap/css/app.css')
+	body.light.sidebar-mini.sidebar-collapse
+		include ../includes/preloader
+		#app
+			include ../includes/aside_main_sidebar
+			include ../includes/has_sidebar_left
+			a.paper-nav-toggle.left.ml-2.fixed(href='#', data-toggle='push-menu')
+				i
+			include ../includes/has_sidebar_tabs
+			block content
+			include ../includes/aside_control_sidebar
+			.control-sidebar-bg.shadow.white.fixed
+	script(src="/assets/bootstrap/js/app.js")
