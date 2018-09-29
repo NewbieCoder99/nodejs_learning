@@ -20,7 +20,7 @@ module.exports = {
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       }
     })
     .then(() => queryInterface.addConstraint('Role_users', ['userId'], {

@@ -1,0 +1,17 @@
+<ul class="panel-tabs">
+	<li class="panel-tab icon">
+		<span class="panel-tab-title">&equiv;</span>
+	</li>
+	<% tabs.forEach(function eachTab(tab) { %>
+		<li class="panel-tab toggler">
+			<span class="panel-tab-title"><%= tab.title %></span>
+			<div class="panel-content" style="display:none;">
+				<a href="#" class="panel-toggle ui-control ui-button" style="display: none;">+</a>
+				<div class="panel-resize-region">
+					<%= tab.content %>
+				</div>
+				<div class="panel-resize-handle ui-control">====</div>
+			</div>
+		</li>
+	<% }) %>
+</ul>
