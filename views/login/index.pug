@@ -1,44 +1,80 @@
 extends ../layouts/layout_login
 block content
-	div.row
-		div.col-lg-6
-			img(src="/assets/images/icon-plane.png", alt="")
-		div.col-lg-6.p-t-100
-			div.text-white
-				h1
-					i.icon-lock  Login Administrator
-				p.s-18.p-t-b-20.font-weight-lighter
-					| Silakan melakukan login terlebih dahulu
-				.row
-					.col-lg-6
-						.form-group.has-icon
-							i.icon-envelope-o
-							input.form-control.form-control-lg.no-b(type='text', placeholder='Email Address', id="user")
-					.col-lg-6
-						.form-group.has-icon
-							i.icon-user-secret
-							input.form-control.form-control-lg.no-b(type='password', placeholder='Password', id="password")
-					.col-lg-12
-						input.btn.btn-success.btn-lg.btn-block(type='button', value='Login', id="login_btn")
-						p.forget-pass.text-white
-							| Have you forgot your username or password ?
-block script
-
+	div.form-group
+		center
+			h3.
+				Sign In
+			font.v-welcome-text.
+				Welcome! Please sign in to your account.
+	div.authForm
+		div.form-group
+			label(for="email", class="v-label").
+				Email
+			input(class="form-control v-input", type="email",  name="email", id="email", autocomplete="off")
+		div.form-group
+			label(for="password", class="v-label").
+				Password
+			input(class="form-control v-input", type="password",  name="password", id="password")
+		div.form-group
+			div.row
+				div.col-md-6.col-lg-6.col-xl-6
+					label.v-remember-text
+						input(type="checkbox", name="remember").
+						font Remember Me
+						span
+				div.col-md-6.col-lg-6.col-xl-6
+					a(href="/password/reset", id="v-forgot-password").
+						forgot password?
+		div.form-group
+			button(class="btn btn-primary btn-block", type="button" id="authButton").
+				Sign In
+		div.form-group
+			div.v-login-divider
+				div.v-divider
+					span
+					span OR
+					span
+			center
+				a(href="", class="btn btn-primary")
+					<i class="fab fa-facebook"></i> Sign In With Facebook
+				a(href="", class="btn btn-danger")
+					<i class="fab fa-google"></i> Sign In With Google
+				p
+					small
+						p
+							a(href="", class="v-remember-text") Dont have an account?
+block scripts
 	script(type="text/javascript").
-		function alert(param) {
-			return '<div role="alert" class="alert red" style="color:white;">' + param +'</div>';
-		}
-		jQuery('#login_btn').click(function()
-		{
-			var user = jQuery('#user').val(), pass = jQuery('#password').val();
-			jQuery.ajax( { url : '/api/login', method : 'post', data : 'username=' + user + '&password=' + pass, dataType : 'json',
-				success 	: function(res) {
-					if(res.error == 0) {
-						jQuery('#notice').html(alert(res.message))
-						setTimeout(function() { window.location.replace("./dashboard");
-						}, 500);
-					} else { for (var i = 0; i < res.message.length; i++) { jQuery('#notice').html(alert(res.message[i].msg)) }
+		var authButton = jQuery('#authButton')
+		authButton.click(function() {
+			jQuery.ajax({
+				url : "/api/login",
+				dataType : 'json',
+				method : 'post',
+				data : jQuery('.authForm').serialize(),
+				beforeSend : function() {
+					authButton.html('Processing ...');
+					authButton.attr('disabled','disabled');
+				},
+				susccess : function(response) {
+					if(!response.error) {
+						location.href = "/dashboard";
+						return;
 					}
+
+					authButton.html('Sign In');
+					authButton.removeAttr('disabled','disabled');
+				},
+				error : function(error) {
+					authButton.html('Sign In');
+					authButton.removeAttr('disabled','disabled');
+					if(error.responseJSON.errors != undefined) {
+						if(error.responseJSON.errors.email != undefined) {
+							vex.dialog.alert(error.responseJSON.errors.email[0]);
+							return;
+						}
+					}
+					vex.dialog.alert(error.responseJSON.error)
 				}
-			});
-		});
+			})
+		})

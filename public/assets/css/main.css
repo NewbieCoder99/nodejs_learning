@@ -1,0 +1,324 @@
+
+
+/* @media (max-width: 768px) {
+    
+    #sidebar {
+        margin-left: -250px;
+        transform: rotateY(100deg);
+    }
+    #sidebar.active {
+        margin-left: 0;
+        transform: none;
+    }
+
+} */
+
+/* @media (max-width: 576px) {
+    #sidebar {
+        margin-left: -200px;
+        transform: rotateY(100deg);
+    }
+    #sidebar.active {
+        margin-left: 0px;
+        transform: none;
+    }
+} */
+
+
+
+
+body {
+    background: #fafafa;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+h5 {
+    font-size: 1.1rem;
+}
+
+.wrapper {
+    display: flex;
+    flex-grow: 1;
+    align-items: stretch;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: stretch;
+}
+
+.breadcrumb {
+    font-size: .8em;
+    border-radius: 0;
+}
+
+#sidebar {
+    min-width: 180px;
+    max-width: 180px;
+    height: auto !important;
+    background: rgb(69, 78, 95);
+    transition: all 0.4s;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+}
+
+#sidebar.active .sidebar-header {
+    padding: 0px;
+}
+
+#sidebar .sidebar-header h3{
+    color: white ;
+}
+
+#sidebar.active .sidebar-header h3{
+    color: white ;
+    font-size: 0.6em;
+    display: block;
+    text-align: center;
+    padding-top: 20px;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+}
+
+#sidebarCollapse {
+    border: none;
+    border-radius: 0px;
+    min-width: 180px;
+    max-width: 180px;
+    background: #999;
+}
+
+
+
+
+#sidebarConstants li a{
+    color: white ;
+    padding-left: 10px;
+    font-size: .9em;
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.sidebarText {
+    color: white ;
+    padding-left: 10px;
+    display: inline;
+    font-size: 0.9em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.sidebarText.active {
+    display: none;
+}
+
+
+
+
+
+#sidebar ul li a:hover {
+    color: white;
+    background: #67B8DE;
+    text-decoration: none;
+}
+
+#sidebar.active ul li a {
+    font-size: .7em;
+    text-align: center;
+    padding-left: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#sidebar.active ul li p {
+    display: none;
+}
+
+
+
+
+
+#sidebar.active ul li i{
+    display: none
+}
+
+#sidebar.active {
+    max-width: 60px;
+    min-width: 60px;
+}
+
+#sidebar.active button {
+    max-width: 60px;
+    min-width: 60px;
+    transition: all 0.4s;
+}
+
+
+
+.navbar {
+    font-size: 18px;
+}
+
+.navbar-brand {
+    margin: 0 20px 0 20px;
+}
+
+.float-left {
+    float: left !important;
+}
+
+#MainNavbar {
+    padding-left: 20px;
+}
+
+#MainNavbar ul li a{
+    font-size: 2rem;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#MainNavbar.active ul li a{
+    font-size: 1rem;
+    padding-left: 0px;
+    padding-right: 00px;
+}
+
+#MainNavbar ul li{
+    padding-right: 10px;
+}
+
+#MainNavbar .dropdown .dropdown-menu a{
+    font-size: 14px;
+}
+
+.dropdown-menu {
+    min-width: 0;
+}
+
+.avatar{
+    border-radius: 30%;
+    width: 60px;
+    height: 60px;
+}
+
+.card {
+    margin-bottom: 15px;
+}
+
+.card-body p{
+    margin-bottom: 0;
+    font-size: 0.8rem;
+}
+
+.card-header{
+   padding: .4rem .75rem;
+}
+
+.card-title {
+    margin-bottom: 0px;
+}
+
+
+.card-footer {
+    padding-left: 20px;
+}
+
+.card-footer p {
+    font-size: .9em;
+    line-height: 1;
+}
+
+/* Quick Notes - you need to create the header-elements and header-elements-inline css classes so the quick notes can look nice
+*/
+
+#quickNotes {
+    border-left: 1px solid grey;
+
+    
+}
+
+.btn {
+    font-size: 0.7rem;
+    margin-right: 5px;
+}
+
+/* #quickNotes p{
+    
+} */
+
+.header-elements-inline{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* .card-header .header-elements {
+    padding-top: 0.9375rem; 
+} */
+
+.header-elements {
+    margin-bottom: 0;
+}
+
+/* End Quick Notes */
+
+#draggable { 
+    width: 150px; 
+    height: 150px; 
+    padding: 0.5em; 
+    cursor: pointer;
+}
+
+
+
+.navbar-toggler-icon {
+    width: 1em;
+    height: 1em;
+}
+
+
+
+
+#sitesAndLocations {
+    font-size: .8em;
+}
+
+
+#status {
+    color: green;
+    font-weight: 500;
+}
+
+.table {
+    font-size: 0.8rem;
+
+}
+
+
+
+/* Table scrolling */
+
+.scrollbar {
+    position: relative;
+    height: 200px;
+    overflow: auto;
+    }
+.table-scroll-y {
+    display: block;
+    }
+
+/* End table scrolling */

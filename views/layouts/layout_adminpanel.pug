@@ -1,80 +1,10 @@
 doctype html
-html
+html(lang="en")
 	head
+		title #{title}
 		meta(charset='utf-8')
 		meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
 		meta(name='description', content='I Love NodeJS')
 		meta(name='author', content='Qudrat Nurfajar Yasin Sutisna')
-		title #{title}
-		link(rel='stylesheet', href='/assets/bootstrap/css/app.css')
-	body.light.sidebar-mini.sidebar-collapse
-		include ../includes/preloader
-		#app
-			include ../includes/aside_main_sidebar
-			include ../includes/has_sidebar_left
-			a.paper-nav-toggle.left.ml-2.fixed(href='#', data-toggle='push-menu')
-				i
-			.has-sidebar-left.has-sidebar-tabs
-				.sticky.white.shadow
-					.navbar.navbar-expand.d-flex.justify-content-between.bd-navbar.white.shadow
-						.relative
-							.d-flex
-								.d-none.d-md-block
-									h1.nav-title
-										i.icon.icon-package2
-										| &#x9; Products
-						.navbar-custom-menu
-							ul.nav.navbar-nav
-								li.dropdown.custom-dropdown.messages-menu
-									a.nav-link(href='#', data-toggle='dropdown')
-										i.icon-envelope-o
-										span.badge.badge-success.badge-mini.rounded-circle 4
-									ul.dropdown-menu.dropdown-menu-right
-										li
-											ul.menu.pl-2.pr-2
-												li
-													a(href='#')
-														.avatar.float-left
-															img(src='/assets/images/u8.png', alt='')
-															span.avatar-badge.busy
-														h4
-															| Support Team
-								li.dropdown.custom-dropdown.notifications-menu
-									a.nav-link(href='#', data-toggle='dropdown', aria-expanded='false')
-										i.icon-notifications_none
-										span.badge.badge-danger.badge-mini.rounded-circle 4
-									ul.dropdown-menu.dropdown-menu-right
-										li.header You have 10 notifications
-										li
-											ul.menu
-												li
-													a(href='#')
-														i.icon.icon-data_usage.text-success
-														|  5 new members joined today
-										li.footer.p-2.text-center
-											a(href='#') View all
-								li
-									a.nav-link(data-toggle='collapse', data-target='#navbarToggleExternalContent', aria-controls='navbarToggleExternalContent', aria-expanded='false', aria-label='Toggle navigation')
-										i.icon-search3
-								li.dropdown.custom-dropdown.user.user-menu
-									a.nav-link(href='#', data-toggle='dropdown')
-										img.user-image(src='/assets/images/u8.png', alt='User Image')
-									.dropdown-menu.p-4.dropdown-menu-right
-										.row.box.justify-content-between.my-4
-											.col
-												a(href='#')
-													i.icon-beach_access.pink.lighten-1.avatar.r-5
-													.pt-1 Profil
-											.col
-												a(href='#')
-													i.icon-perm_data_setting.indigo.lighten-2.avatar.r-5
-													.pt-1 Pengaturan
-											.col
-												a(href='/api/logout')
-													i.icon-cancel.indigo.lighten-2.avatar.r-5
-													.pt-1 Keluar
-				block content
-			include ../includes/aside_control_sidebar
-			.control-sidebar-bg.shadow.white.fixed
-	script(src="/assets/bootstrap/js/app.js")
-	block script
+	body
+		block script

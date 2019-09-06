@@ -6,45 +6,32 @@ html(lang="en")
 		meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
 		meta(name='description', content='I Love NodeJS')
 		meta(name='author', content='Qudrat Nurfajar Yasin Sutisna')
-		link(rel='stylesheet', href='/assets/bootstrap/css/app.css')
-		link(rel='stylesheet', href='/assets/custom/css/custom.css')
-	body.light.sidebar-mini.sidebar-collapse
-		#loader.loader
-			.plane-container
-				.preloader-wrapper.small.active
-					.spinner-layer.spinner-blue
-						.circle-clipper.left
-							.circle
-						.gap-patch
-							.circle
-						.circle-clipper.right
-							.circle
-					.spinner-layer.spinner-red
-						.circle-clipper.left
-							.circle
-						.gap-patch
-							.circle
-						.circle-clipper.right
-							.circle
-					.spinner-layer.spinner-yellow
-						.circle-clipper.left
-							.circle
-						.gap-patch
-							.circle
-						.circle-clipper.right
-							.circle
-					.spinner-layer.spinner-green
-						.circle-clipper.left
-							.circle
-						.gap-patch
-							.circle
-						.circle-clipper.right
-							.circle
-		div#app
-			main
-				.blue4.p-t-b-100.height-full.responsive-phone
-					.container
+		link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700')
+		link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
+		link(rel='stylesheet', href='/assets/css/main.css')
+		link(rel='stylesheet', href='https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css')
+		link(rel='stylesheet', href='/assets/css/custom.css')
+		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/vex-js/4.1.0/css/vex.min.css')
+		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/vex-js/4.1.0/css/vex-theme-default.min.css')
+		script(type="text/javascript", src="/assets/vendors/fontawesome-5.9.0/js/all.js")
+		style(type='text/css').
+			#v-forgot-password {
+				float:right;
+				color:#717171;
+				font-size:0.9em;
+			}
+	body
+		div.wrapper
+			div.content
+				div.container-fluid
+					div.col-lg-4.col-md-4.col-xl-4.col-xs-12.col-sm-12.offset-md-4#v-login
 						block content
-		.control-sidebar-bg.shadow.white.fixed
-		script(type='text/javascript', src='/assets/bootstrap/js/app.js')
-		block script
+
+		script(type="text/javascript", src="https://code.jquery.com/jquery-3.3.1.slim.min.js")
+		script(type="text/javascript", src="https://code.jquery.com/jquery-1.12.4.js")
+		script(type="text/javascript", src="https://code.jquery.com/ui/1.12.1/jquery-ui.js")
+		script(type="text/javascript", src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js")
+		script(type="text/javascript", src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js")
+		script(type="text/javascript", src="/assets/js/app.js")
+		script(type="text/javascript", src="https://cdnjs.cloudflare.com/ajax/libs/vex-js/4.1.0/js/vex.combined.min.js")
+		block scripts
