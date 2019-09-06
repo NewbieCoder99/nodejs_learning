@@ -6,7 +6,7 @@ block content
 				Sign In
 			font.v-welcome-text.
 				Welcome! Please sign in to your account.
-	div.authForm
+	form.authForm
 		div.form-group
 			label(for="email", class="v-label").
 				Email
@@ -19,15 +19,13 @@ block content
 			div.row
 				div.col-md-6.col-lg-6.col-xl-6
 					label.v-remember-text
-						input(type="checkbox", name="remember").
-						font Remember Me
+						<input type="checkbox" name="remember"> Remember Me
 						span
 				div.col-md-6.col-lg-6.col-xl-6
 					a(href="/password/reset", id="v-forgot-password").
 						forgot password?
 		div.form-group
-			button(class="btn btn-primary btn-block", type="button" id="authButton").
-				Sign In
+			button(class="btn btn-primary btn-block", type="button" id="authButton") Sign In
 		div.form-group
 			div.v-login-divider
 				div.v-divider
@@ -53,28 +51,20 @@ block scripts
 				method : 'post',
 				data : jQuery('.authForm').serialize(),
 				beforeSend : function() {
-					authButton.html('Processing ...');
-					authButton.attr('disabled','disabled');
+					authButton.html('Processing ...')
+					authButton.attr('disabled','disabled')
 				},
-				susccess : function(response) {
+				success : function(response) {
+
 					if(!response.error) {
-						location.href = "/dashboard";
-						return;
+						location.href = "/dashboard"
+						return
 					}
 
-					authButton.html('Sign In');
-					authButton.removeAttr('disabled','disabled');
-				},
-				error : function(error) {
-					authButton.html('Sign In');
-					authButton.removeAttr('disabled','disabled');
-					if(error.responseJSON.errors != undefined) {
-						if(error.responseJSON.errors.email != undefined) {
-							vex.dialog.alert(error.responseJSON.errors.email[0]);
-							return;
-						}
-					}
-					vex.dialog.alert(error.responseJSON.error)
+					vex.dialog.alert(response.message[0])
+
+					authButton.html('Sign In')
+					authButton.removeAttr('disabled','disabled')
 				}
 			})
 		})

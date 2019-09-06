@@ -7,7 +7,7 @@ const 	crypto 	= require('crypto'),
 
 exports.checkLogin = function(req, res, next) {
 
-	req.check('username','Username is required').notEmpty();
+	req.check('email','Email is required').notEmpty();
 	req.check('password','Password is required').notEmpty();
 
 	var errors = req.validationErrors();
@@ -17,12 +17,11 @@ exports.checkLogin = function(req, res, next) {
 		var getUser = new Promise(function(resolve) {
 			model.User.findOne({
 				where: {
-					username : req.body.username,
-					password : crypto.createHmac('sha256', secret)
-							   .update(req.body.password).digest('hex'),
+					email : req.body.email,
+					password : crypto.createHmac('sha256', secret).update(req.body.password).digest('hex'),
 				},
 				include : [
-					{ 
+					{
 						model : model.Role_users,
 						include : [{
 							model : model.Roles
@@ -34,17 +33,16 @@ exports.checkLogin = function(req, res, next) {
 
 		getUser.then(function(callBack) {
 
-			req.session.userdata = JSON.stringify(callBack);
-
 			if(callBack == null) {
 				res.json({
-					error  : 1,
+					error  : true,
 					message : ["User tidak ditemukan."],
 					result : null
 				});
 			} else {
+				req.session.userdata = JSON.stringify(callBack);
 				res.json({
-					error  	: 0,
+					error  	: false,
 					message : "Login berhasil.",
 					result 	: req.session.userdata
 				});
