@@ -1,2 +1,23 @@
 extends ../layouts/layout_adminpanel
+
+block styles
+	link(rel="stylesheet", type="text/css", href="/assets/css/my-profile.css")
+	style(type="text/css").
+		.twPc-bg {
+		    background-image: url(/assets/img/users/avatar_backgrounds/default.jpeg);
+		    background-position: 0 50%;
+		    background-size: 100% auto;
+		    border-bottom: 1px solid #e1e8ed;
+		    border-radius: 4px 4px 0 0;
+		    height: 200px;
+		    width: 100%;
+		    cursor:pointer;
+		}
+
+block breadcrumb
+	ol.breadcrumb
+		li.breadcrumb-item.active.
+			Dashboard
+
 block content
+	include ../adminpanel/profiles/index.pug
