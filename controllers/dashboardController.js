@@ -1,8 +1,8 @@
 exports.index = function(req, res, next) {
 	if(req.session.userdata != null) {
-		res.render('adminpanel/adminpanel_index', {
+		res.render('adminpanel/index', {
 			title 	: 'Dashboard admin',
-			sess 	: req.session.userdata
+			sess 	: JSON.parse(req.session.userdata)
 		});
 	} else {
 		res.redirect('/');

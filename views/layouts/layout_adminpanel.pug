@@ -6,6 +6,21 @@ html(lang="en")
 		meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
 		meta(name='description', content='I Love NodeJS')
 		meta(name='author', content='Qudrat Nurfajar Yasin Sutisna')
+		include ../includes/css.pug
 	body
-		block content
+		div#header
+			include ../includes/navbar.pug
+		div.wrapper
+			include ../includes/sidebar.pug
+			div.content
+				nav(aria-label="breadcrumb")
+					block breadcrumb
+				div.container-fluid
+					block content
+
+		include ../includes/js.pug
+
+		script.
+			vex.defaultOptions.className = 'vex-theme-default';
+
 		block script
