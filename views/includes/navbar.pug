@@ -1,15 +1,26 @@
-nav.navbar.sticky-top.navbar-expand-md.navbar-dark.bg-dark
-	a(class="navbar-brand", href="")
-		img(src="/assets/img/logo.png",style="width:150px;height:50px;margin-left:-20px;")
-	button(class="navbar-toggler", type="button",data-toggle="collapse", data-target="#MainNavbar",aria-controls="MainNavbar", aria-expanded="false", aria-label="Toggle navigation")
-		span.navbar-toggler-icon
-	div.collapse.navbar-collapse#MainNavbar
-		ul.navbar-nav.mr-auto
-		div#avatar.dropdown
-			a(href="javascript:void(0)",data-toggle="dropdown")
-				img(class="avatar",src="https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=Admin")
-			div(class="dropdown-menu dropdown-menu-right", aria-labelledby="dropdownMenuLink")
-				a(class="dropdown-item", href="javascript::void(0)") Profile
-				a(class="dropdown-item", href="javascript::void(0)") Setting
-				a(class="dropdown-item", href="javascript::void(0)") Billing
-				a(class="dropdown-item", href="/logout") Logout
+header
+	nav.navbar.navbar-expand-md.navbar-light
+		div.container
+			a(class="navbar-brand", href="/")
+				img(src="/assets/img/logo.png", style="width:150px;")
+			button(
+				class="navbar-toggler",
+				data-toggle="collapse"
+				data-target="#navbarSupportedContent",
+				aria-controls="navbarSupportedContent",
+				aria-expanded="false",
+				aria-label="Toggle navigation"
+			)
+
+			div.collapse.navbar-collapse#navbarSupportedContent
+				ul.navbar-nav.ml-md-auto.v-menu
+					li.nav-item.p-2.active
+						a(class="nav-link", href="javascript:void(0)") Home
+					li.nav-item.p-2
+						a(class="nav-link", href="javascript:void(0)") About
+					li.nav-item.p-2
+						a(class="nav-link", href="javascript:void(0)") Contact
+					li.nav-item.p-2
+						a(class="nav-link", href="javascript:void(0)") Portfolio
+					li.nav-item.p-2
+						a(class="nav-link", id="v-login-btn", href="javascript:void(0)") Blog

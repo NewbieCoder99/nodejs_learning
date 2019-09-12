@@ -35,3 +35,6 @@
 <a href="//pughtml.com">HTML To PUG Generator</a>
 # Screenshoot
 ![Alt text](public/assets/images/screenshoot.png?raw=true "Screenshoot" )
+
+# Run With Nodemon
+	nodemon ./server.js 127.0.0.1 3000

@@ -1,0 +1,58 @@
+extends layouts/layout_app
+block styles
+block content
+
+	include includes/jumbotron.pug
+
+	include includes/blogs.pug
+
+	section
+		div.container
+			div.row
+				div.col-lg-12.col-md-12.col-sm-12.text-center
+					h3 My Services
+					div.v-pb-20
+				div.col-lg-4.col-md-6.col-sm-6.text-center
+					div.single_service
+						div.service_icon
+							span
+								i.fa.fa-desktop
+						h6 Application Development
+						p With agile development and reduce overhead cost.
+				div.col-lg-4.col-md-6.col-sm-6.text-center
+					div.single_service
+						div.service_icon
+							span
+								i.fa.fa-spinner
+						h6 Network solution
+						p Experience in network infrastructure, familiar with network monitoring tools.
+				div.col-lg-4.col-md-6.col-sm-6.text-center
+					div.single_service
+						div.service_icon
+							span
+								i.fa.fa-cog
+						h6 Fast Response Service
+						p Fast response service 24 hour anytime, in your timezone if needed.
+
+	include includes/clients.pug
+
+	include includes/footer.pug
+
+block scripts
+	script.
+		$(".clients-carousel").owlCarousel({
+		  autoplay: true,
+		  dots: true,
+		  loop: true,
+		  responsive: {
+		  	0 : {
+		  		items: 2
+		  	},
+		  	768 : {
+		  		items: 4
+		  	},
+		  	900: {
+		  		items: 6
+		  	}
+		  }
+		});
