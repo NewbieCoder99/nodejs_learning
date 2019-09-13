@@ -23,6 +23,9 @@ module.exports = {
       company: {
         type: Sequelize.STRING
       },
+      companyLogo: {
+        type: Sequelize.STRING
+      },
       developmentDate: {
         type: Sequelize.DATE
       },

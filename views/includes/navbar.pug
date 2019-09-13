@@ -1,3 +1,24 @@
+-
+	var home = '';
+	var about = '';
+	var contact = '';
+	var portfolio = '';
+	var blog = '';
+
+	if(segment != undefined) {
+		if(segment == 'home') {
+			var home = 'active';
+		} else if(segment == 'about') {
+			var about = 'active';
+		} else if(segment == 'contact') {
+			var contact = 'active';
+		} else if(segment == 'portfolio') {
+			var portfolio = 'active';
+		} else if(segment == 'blog') {
+			var blog = 'active';
+		}
+	}
+
 header
 	nav.navbar.navbar-expand-md.navbar-light
 		div.container
@@ -14,13 +35,34 @@ header
 
 			div.collapse.navbar-collapse#navbarSupportedContent
 				ul.navbar-nav.ml-md-auto.v-menu
-					li.nav-item.p-2.active
-						a(class="nav-link", href="javascript:void(0)") Home
-					li.nav-item.p-2
-						a(class="nav-link", href="javascript:void(0)") About
-					li.nav-item.p-2
-						a(class="nav-link", href="javascript:void(0)") Contact
-					li.nav-item.p-2
-						a(class="nav-link", href="javascript:void(0)") Portfolio
+					//- Home
+					if home == 'active'
+						li.nav-item.p-2.active
+							a(class="nav-link", href="/") Home
+					else
+						li.nav-item.p-2
+							a(class="nav-link", href="/") Home
+					//- About
+					if about == 'active'
+						li.nav-item.p-2.active
+							a(class="nav-link", href="/about") About
+					else
+						li.nav-item.p-2
+							a(class="nav-link", href="/about") About
+					//- Contact
+					if contact == 'active'
+						li.nav-item.p-2.active
+							a(class="nav-link", href="/contact") Contact
+					else
+						li.nav-item.p-2
+							a(class="nav-link", href="/contact") Contact
+					//- Portfolio
+					if portfolio == 'active'
+						li.nav-item.p-2.active
+							a(class="nav-link", href="/portfolio") Contact
+					else
+						li.nav-item.p-2
+							a(class="nav-link", href="/portfolio") Portfolio
+
 					li.nav-item.p-2
 						a(class="nav-link", id="v-login-btn", href="javascript:void(0)") Blog

@@ -1,12 +1,12 @@
 body {
-  font-family:'Poppins';
+  font-family: sans-serif;
 }
 
 a:focus {
   outline:none;
 }
 .v-hero {
-  background:url('https://scontent-sin2-1.cdninstagram.com/vp/4f534efa65613cc20aa39c9272408892/5E0A7F1C/t51.2885-15/e35/36599800_1260906220711673_2924846713959088128_n.jpg?_nc_ht=scontent-sin2-1.cdninstagram.com&_nc_cat=105');
+  background:url('https://anerdsworld.com/wp-content/uploads/2018/09/header-web-development-portfolio.jpg');
   background-size:cover;
   height:470px;
   border-radius: 0;
@@ -538,6 +538,7 @@ body.modal-open #header {
   #v-jumbotron-container {
     margin-top:40%;
   }
+
   .jumbotron-heading {
     color: #fff;
   }
@@ -652,6 +653,11 @@ body.modal-open #header {
   #v-jumbotron-container {
     margin-top:275px;
   }
+
+  #v-jumbotron2-container {
+    margin-top:40%;
+  }
+
   .jumbotron-heading {
     color: #fff;
   }
@@ -687,9 +693,20 @@ body.modal-open #header {
     margin-right:20px;
     color:#fff;
   }
+
   #v-jumbotron-container {
     margin-top:275px;
   }
+
+  #v-jumbotron2-container {
+    margin-top:25px;
+    font-weight:bold;
+  }
+
+  .jumbotron2-heading {
+    color: #fff;
+  }
+
   .jumbotron-heading {
     color: #fff;
   }
