@@ -1,13 +1,11 @@
 .twPc-div {
     background: #fff none repeat scroll 0 0;
-    border: 1px solid #e1e8ed;
-    border-radius: 6px;
+    border-radius:none;
     height: 100%;
-    max-width: 100%;
     width: 100%;
 }
 .twPc-block {
-    display: block !important;
+    display: block;
 }
 .twPc-button {
     margin: -35px -10px 0;
@@ -26,6 +24,7 @@
 }
 .twPc-divUser {
     margin: 5px 0 0;
+    max-width: 100%;
 }
 .twPc-divName {
     font-size: 18px;
@@ -36,7 +35,7 @@
     color: inherit !important;
 }
 .twPc-divStats {
-    margin-left: 11px;
+
     padding: 10px 0;
 }
 .twPc-Arrange {

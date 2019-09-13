@@ -33,6 +33,7 @@
     "pug": "2.0.0-beta11",
     "relation": "^0.1.0",
     "sequelize": "^4.44.3",
+    "sequelize-cli": "^5.5.1",
     "sql-injection": "0.0.6",
     "sqlite3": "^4.1.0",
     "tedious": "^2.6.4",
