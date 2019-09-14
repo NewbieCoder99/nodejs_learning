@@ -1,6 +1,8 @@
-var HTMLParser = require('node-html-parser');
 var http = require("http");
 var request = require('request');
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
+const _string = require('../libraries/cutString');
 
 exports.about = function(req, res, next) {
 
@@ -11,10 +13,20 @@ exports.about = function(req, res, next) {
 			'Content-Type' : 'application/x-www-form-urlencoded' 
 		}
 	}, function (e, r, body) {
-		console.log(body)
+
+		const dom = new JSDOM(body);
+		var _title = _string.cutString(
+				body.toString(),'"title":"','","'
+			),
+			_description = _string.cutString(
+				body.toString(),'itemprop="description">','</p>'
+			);
+
 		return res.render('about', {
 			title : 'About Me',
-			segment : 'about'
+			segment : 'about',
+			_title : _title,
+			_description : _description.toString()
 		});
 	});
 
