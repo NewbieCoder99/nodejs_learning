@@ -27,6 +27,7 @@
     "mysql": "^2.17.1",
     "mysql2": "^1.7.0",
     "node-datetime": "^2.1.2",
+    "node-html-parser": "^1.1.16",
     "nodemon": "^1.19.2",
     "pg": "^6.4.2",
     "pg-hstore": "^2.3.2",
