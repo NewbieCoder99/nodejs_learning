@@ -54,6 +54,7 @@ ul.twPc-Arrange {
 .twPc-ArrangeSizeFit {
     display: table-cell;
     padding: 0;
+    width:25%;
     vertical-align: top;
 }
 .twPc-ArrangeSizeFit a:hover {

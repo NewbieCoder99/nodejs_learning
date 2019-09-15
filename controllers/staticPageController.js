@@ -15,13 +15,12 @@ exports.about = function(req, res, next) {
 	}, function (e, r, body) {
 		var	_data = _string.cutString(body.toString(),'var phpVars = ','};');
 		var _dataToJson = JSON.parse(_data + '}');
-		// console.log(_dataToJson.profileSettings.profile.assignments);
+		console.log(_dataToJson.profileSettings.profile);
 		return res.render('about', {
 			title : 'About Me',
 			segment : 'about',
 			_assignments : _dataToJson.profileSettings.profile.assignments,
-			_dataToJson : _dataToJson,
-			ratingScore : 0
+			_dataToJson : _dataToJson
 		});
 
 	});

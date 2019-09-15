@@ -20,7 +20,6 @@ block styles
 		    cursor:pointer;
 		    display: block;
 		}
-
 block content
 	section
 		div.row
@@ -29,16 +28,37 @@ block content
 					a.twPc-bg
 					div
 						div.twPc-button
-							a(href="javascript:void(0)", class="btn btn-success btn-sm")
+							a(
+								href="https://wa.me/6283823927728?text=Hello%2C%20Qudrat",
+								class="btn btn-success btn-sm",
+								target="_blank"
+							)
 								i.fab.fa-whatsapp
-							a(href="javascript:void(0)", class="btn btn-info btn-sm")
-								i.fab.fa-twitter
-							a(href="javascript:void(0)", class="btn btn-primary btn-sm")
+							a(
+								href="https://www.linkedin.com/in/qudrat-nurfajar-yasin-sutisna-s-kom-170183179",
+								class="btn btn-info btn-sm",
+								target="_blank"
+							)
+								i.fab.fa-linkedin
+							a(
+								href="https://www.facebook.com/fajar.antariksa",
+								class="btn btn-primary btn-sm",
+								target="_blank"
+							)
 								i.fab.fa-facebook
-							a(href="javascript:void(0)", class="btn btn-danger btn-sm")
+							a(
+								href="https://www.instagram.com/qudratnurfajarys",
+								class="btn btn-danger btn-sm",
+								target="_blank"
+							)
 								i.fab.fa-instagram
 						a(title="", href="javascript:void(0)", class="twPc-avatarLink")
-							img(alt="", class="twPc-avatarImg", src='' + _dataToJson.profileSettings.profile.profile.portrait.bigPortrait +'')
+							img(
+								class="twPc-avatarImg",
+								title='' + _dataToJson.profileSettings.profile.profile.name + '',
+								alt='' + _dataToJson.profileSettings.profile.profile.name + '',
+								src='' + _dataToJson.profileSettings.profile.profile.portrait.bigPortrait +''
+							)
 
 						div.twPc-divUser
 							div.twPc-divName
@@ -50,8 +70,32 @@ block content
 									small <i class="fa fa-map-marker"></i> #{_dataToJson.profileSettings.profile.profile.location.city} , #{_dataToJson.profileSettings.profile.profile.location.country}
 								p.text-muted.v-justify-text
 									h5 #{_dataToJson.profileSettings.profile.profile.title}
-									p #{_dataToJson.profileSettings.profile.profile.description }
+									p.v-justify-text.v-black-color-text #{_dataToJson.profileSettings.profile.profile.description }
 							div.v-pb-5
+						div.twPc-divStats.text-muted
+							ul.twPc-Arrange
+								li.twPc-ArrangeSizeFit
+									center
+										span.twPc-StatValue.v-black-color-text $#{ _dataToJson.profileSettings.profile.stats.hourlyRate.amount }
+										span.twPc-StatLabel.twPc-block.v-black-color-text
+											small Hourly Rate
+								- var earning = _dataToJson.profileSettings.profile.stats.totalEarnings;
+								if earning
+									li.twPc-ArrangeSizeFit
+										center
+											span.twPc-StatLabel.twPc-block.v-black-color-text #{earning}
+												span.twPc-StatLabel.twPc-block.v-black-color-text
+													small Total Earned
+								li.twPc-ArrangeSizeFit
+									center
+										span.twPc-StatValue.v-black-color-text #{ _dataToJson.profileSettings.profile.stats.totalJobsWorked }
+										span.twPc-StatLabel.twPc-block.v-black-color-text
+											small Jobs
+								li.twPc-ArrangeSizeFit
+									center
+										span.twPc-StatValue.v-black-color-text #{ Math.round(_dataToJson.profileSettings.profile.stats.totalHours) }
+										span.twPc-StatLabel.twPc-block.v-black-color-text
+											small Hours worked
 		div.v-pb-20
 
 	section
@@ -68,11 +112,14 @@ block content
 								div.card-body
 									each val, n in _assignments
 										div.row
+
 											div.col-xs-12.col-lg-12
 												div.row
+
 													div.col-xs-6.col-sm-6.col-md-10.col-lg-10
-														h5(class="pull-left") #{ _assignments[n].title }
+														h5 #{ _assignments[n].title }
 														p 
+															- var ratingScore = 0;
 															while ratingScore < _assignments[n].feedback.score
 																i.text-success.fa.fa-star
 																- ratingScore++;
@@ -81,13 +128,27 @@ block content
 																var monthInArrayWithName = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
 															font.text-muted &nbsp;&nbsp; #{ _assignments[n].feedback.score }.00 &nbsp; #{ monthInArrayWithName[_date.getMonth()] } #{_date.getFullYear()}
+														p.v-black-color-text #{ _assignments[n].feedback.comment }
 
-														p #{ _assignments[n].feedback.comment }
-													div.col-xs-12.col-sm-12.col-md-2.col-lg-2
+													div.col-xs-6.col-sm-6.col-md-2.col-lg-2
 														div(style="float:right;")
-															b $#{ _assignments[n].totalCharges.amount}
-															p $#{ _assignments[n].hourlyRate.amount} / hr
-															p #{ _assignments[n].totalHours} hours
+															if _assignments[n].totalCharges != undefined && _assignments[n].hourlyRate != undefined
+																p(style="float:right;",class="v-black-color-text")
+																	b.v-black-color-text $#{ _assignments[n].totalCharges.amount}
+																br
+																p(style="float:right;", class="v-black-color-text").
+																	$#{ _assignments[n].hourlyRate.amount} / hr
+															else
+																p(style="float:right;", class="v-black-color-text") Private
+															if _assignments[n].totalHours != 0
+																p.v-black-color-text.
+																	#{ _assignments[n].totalHours} hours
+															else
+																p.v-black-color-text Fixed Price
+
+													if _assignments.length - 1 != n
+														div.col-xs-12.col-sm-12.col-md-12.col-lg-12
+															hr
 
 						div.col-xs-12.col-sm-12.col-md-12.col-lg-12
 							div.card
@@ -95,55 +156,32 @@ block content
 									h5.card-title My Location
 								div.card-body
 									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.46433322897!2d108.22117091382917!3d-6.834797795060423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f2f4504315cc3%3A0x3ee9132d8661cbea!2sFajarPunya%5BCom%5D%20Home%20Development!5e0!3m2!1sid!2sid!4v1568302468767!5m2!1sid!2sid" height="440" frameborder="0" style="border:0;width:100%;" allowfullscreen=""></iframe>
+
 				div.col-xs-12.col-sm-12.col-md-3.col-lg-3
 					div.row
+
 						div.col-xs-12.col-sm-12.col-md-12.col-lg-12
 							div.card
 								div.card-header
-									h5.card-title Upwork Link
+									h5.card-title Availability
+								div.card-body
+									center
+										p.v-black-color-text.
+											#{_dataToJson.profileSettings.profile.availability.capacity.name }
+						div.col-xs-12.col-sm-12.col-md-12.col-lg-12
+							div.card
+								div.card-header
+									h5.card-title Profile Link
 								div.card-body
 									center
 										p
 											a(href="https://www.upwork.com/fl/qudratnurfajarys", class="btn btn-success", target="_blank") <i class="fa fa-link"></i> Upwork Profile
+
 						div.col-xs-12.col-sm-12.col-md-12.col-lg-12
 							div.card
 								div.card-header
-									h5.card-title Programming Skills
+									h5.card-title Skills
 								div.card-body
-									p
-										b HTML
-									div.skill-container
-										div.skills.html 99%
-									p
-										b CSS
-									div.skill-container
-										div.skills.css 99%
-									p
-										b JAVASCRIPT
-									div.skill-container
-										div.skills.js 99%
-									p
-										b PHP
-									div.skill-container
-										div.skills.php 99%
-
-									p
-										b NODE JS
-									div.skill-container
-										div.skills.nodejs 75%
-
-									p
-										b GO
-									div.skill-container
-										div.skills.go 25%
-
-									p
-										b PYTHON
-									div.skill-container
-										div.skills.python 15%
-
-									p
-										b VB NET 2010
-									div.skill-container
-										div.skills.vbnet 13%
-block scripts
+									- var skills = _dataToJson.profileSettings.profile.profile.skills;
+									each val, n in skills
+										<span class="badge badge-primary">#{skills[n].name}</span>&nbsp;
