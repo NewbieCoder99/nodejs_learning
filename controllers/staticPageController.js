@@ -13,21 +13,17 @@ exports.about = function(req, res, next) {
 			'Content-Type' : 'application/x-www-form-urlencoded' 
 		}
 	}, function (e, r, body) {
-
-		const dom = new JSDOM(body);
-		var _title = _string.cutString(
-				body.toString(),'"title":"','","'
-			),
-			_description = _string.cutString(
-				body.toString(),'itemprop="description">','</p>'
-			);
-
+		var	_data = _string.cutString(body.toString(),'var phpVars = ','};');
+		var _dataToJson = JSON.parse(_data + '}');
+		// console.log(_dataToJson.profileSettings.profile.assignments);
 		return res.render('about', {
 			title : 'About Me',
 			segment : 'about',
-			_title : _title,
-			_description : _description.toString()
+			_assignments : _dataToJson.profileSettings.profile.assignments,
+			_dataToJson : _dataToJson,
+			ratingScore : 0
 		});
+
 	});
 
 }

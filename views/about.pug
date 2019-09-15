@@ -7,7 +7,7 @@ block styles
 			overflow-x:hidden;
 		}
 		.v-hero-2 {
-			background:#005456;
+			background:#37a000;
 			background-size:cover;
 			height:200px;
 			border-radius: 0;
@@ -38,16 +38,19 @@ block content
 							a(href="javascript:void(0)", class="btn btn-danger btn-sm")
 								i.fab.fa-instagram
 						a(title="", href="javascript:void(0)", class="twPc-avatarLink")
-							img(alt="", class="twPc-avatarImg", src="/assets/img/myprofile.jpg")
+							img(alt="", class="twPc-avatarImg", src='' + _dataToJson.profileSettings.profile.profile.portrait.bigPortrait +'')
 
 						div.twPc-divUser
 							div.twPc-divName
 								div.v-pb-10
-								a(href="javascript:void(0)", style="text-decoration:none;")
-									b #{_title}
+								a(href="javascript:void(0)", style="text-decoration:none;font-size:1.1em;")
+									b #{_dataToJson.profileSettings.profile.profile.name} <i class="fa fa-xs fa-check-circle" aria-hidden="true" style="color:#14bff4;"></i>
 							div.col-lg-12
+								p.text-muted
+									small <i class="fa fa-map-marker"></i> #{_dataToJson.profileSettings.profile.profile.location.city} , #{_dataToJson.profileSettings.profile.profile.location.country}
 								p.text-muted.v-justify-text
-									#{_description}
+									h5 #{_dataToJson.profileSettings.profile.profile.title}
+									p #{_dataToJson.profileSettings.profile.profile.description }
 							div.v-pb-5
 		div.v-pb-20
 
@@ -56,13 +59,52 @@ block content
 			div.row
 
 				div.col-xs-12.col-sm-12.col-md-9.col-lg-9
-					div.card
+					div.row
 
-						div.card-body.
-							TODO
+						div.col-xs-12.col-sm-12.col-md-12.col-lg-12
+							div.card
+								div.card-header
+									h5.card-title Work history and feedback
+								div.card-body
+									each val, n in _assignments
+										div.row
+											div.col-xs-12.col-lg-12
+												div.row
+													div.col-xs-6.col-sm-6.col-md-10.col-lg-10
+														h5(class="pull-left") #{ _assignments[n].title }
+														p 
+															while ratingScore < _assignments[n].feedback.score
+																i.text-success.fa.fa-star
+																- ratingScore++;
+															-
+																var _date = new Date(_assignments[n].startedOn);
+																var monthInArrayWithName = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
+															font.text-muted &nbsp;&nbsp; #{ _assignments[n].feedback.score }.00 &nbsp; #{ monthInArrayWithName[_date.getMonth()] } #{_date.getFullYear()}
+
+														p #{ _assignments[n].feedback.comment }
+													div.col-xs-12.col-sm-12.col-md-2.col-lg-2
+														div(style="float:right;")
+															b $#{ _assignments[n].totalCharges.amount}
+															p $#{ _assignments[n].hourlyRate.amount} / hr
+															p #{ _assignments[n].totalHours} hours
+
+						div.col-xs-12.col-sm-12.col-md-12.col-lg-12
+							div.card
+								div.card-header
+									h5.card-title My Location
+								div.card-body
+									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.46433322897!2d108.22117091382917!3d-6.834797795060423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f2f4504315cc3%3A0x3ee9132d8661cbea!2sFajarPunya%5BCom%5D%20Home%20Development!5e0!3m2!1sid!2sid!4v1568302468767!5m2!1sid!2sid" height="440" frameborder="0" style="border:0;width:100%;" allowfullscreen=""></iframe>
 				div.col-xs-12.col-sm-12.col-md-3.col-lg-3
 					div.row
+						div.col-xs-12.col-sm-12.col-md-12.col-lg-12
+							div.card
+								div.card-header
+									h5.card-title Upwork Link
+								div.card-body
+									center
+										p
+											a(href="https://www.upwork.com/fl/qudratnurfajarys", class="btn btn-success", target="_blank") <i class="fa fa-link"></i> Upwork Profile
 						div.col-xs-12.col-sm-12.col-md-12.col-lg-12
 							div.card
 								div.card-header
@@ -104,12 +146,4 @@ block content
 										b VB NET 2010
 									div.skill-container
 										div.skills.vbnet 13%
-
-						div.col-xs-12.col-sm-12.col-md-12.col-lg-12
-							div.card
-								div.card-header
-									h5.card-title Followers
-								div.card-body
-									center
-										p No have following
 block scripts
