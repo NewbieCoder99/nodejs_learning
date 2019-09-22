@@ -39,4 +39,4 @@
 # Run With Nodemon
 	nodemon ./server.js 127.0.0.1 3000
 # Running Migration & Seeder
-	npx sequelize-cli db:seed:undo:all
+	npx sequelize-cli db:seed:all
