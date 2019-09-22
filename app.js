@@ -4,6 +4,7 @@ const 	createError            = require('http-errors'),
         cookieParser 		       = require('cookie-parser'),
         logger 				         = require('morgan'),
         web 				           = require('./routes/web'),
+        dashboard              = require('./routes/dashboard'),
         api 				           = require('./routes/api'),
         expressValidator 	     = require('express-validator'),
         expressSession 		     = require('express-session'),
@@ -26,6 +27,7 @@ app.use(expressSession({
 }));
 
 app.use('/', web);
+app.use('/dashboard', dashboard);
 app.use('/api', api);
 
 // catch 404 and forward to error handler
