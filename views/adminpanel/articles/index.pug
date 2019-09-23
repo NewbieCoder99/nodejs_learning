@@ -1,11 +1,64 @@
 extends ../../layouts/layout_adminpanel
 
 block styles
+	include ../../includes/datatables-css
 
 block breadcrumb
 	ol.breadcrumb
+		li.breadcrumb-item
+			a(href="/dashboard") Dashboard
 		li.breadcrumb-item.active.
-			Dashboard
+			Articles
 
 block content
-	h3 Welcome On Article
+	div.row
+		div.col-lg-12
+			a(href="articles/create", class="btn btn-primary").
+				+ Create
+			br
+			br
+		div.col-lg-12
+			table#DataTable.table.table-condensed.table-bordered
+				thead
+					tr
+						td(class="text-center") User
+						td(class="text-center") Category
+						td(class="text-center") Title
+						td(class="text-center") Image
+				tbody
+
+block scripts
+
+	include ../../includes/datatables-js
+
+	script.
+
+		jQuery('#DataTable').DataTable({
+			ordering : false,
+			processing : false,
+			searching : false,
+			serverSide : true,
+			buttons : [
+			],
+			columns : [
+				{
+					data : 'userId',
+					name : 'userId'
+				},
+				{
+					data : 'categoryId',
+					name : 'categoryId'
+				},
+				{
+					data : 'title',
+					name : 'title'
+				},
+				{
+					data : 'image',
+					name : 'image'
+				},
+			],
+			ajax : {
+				url : ApiURL + "/articles"
+			}
+		});

@@ -1,0 +1,49 @@
+extends ../../layouts/layout_adminpanel
+
+block styles
+	include ../../includes/datatables-css
+
+block breadcrumb
+	ol.breadcrumb
+		li.breadcrumb-item
+			a(href="/dashboard") Dashboard
+		li.breadcrumb-item
+			a(href="/dashboard/articles") Articles
+		li.breadcrumb-item.active.
+			Create
+
+block content
+	div.row
+		div.col-lg-8
+			div.card
+				div.card-body
+					form.createForm
+
+						div.form-group.row
+							label(for="title", class="col-sm-2 col-form-label v-label") Title <em class="v-red-color-text">*</em>
+							div.col-sm-10
+								input(
+									type="text",
+									class="form-control v-input",
+									id="title",
+									name="title",
+									placeholder="",
+									required="required",
+									autocomplete="off"
+								)
+
+						div.form-group.row
+							label(for="content", class="col-sm-2 col-form-label v-label") Content <em class="v-red-color-text">*</em>
+							div.col-sm-10
+								textarea(
+									class="form-control v-input v-no-resize",
+									id="content",
+									name="content",
+									required="required"
+								)
+		div.col-lg-4
+			div.card
+				div.card-body
+
+block scripts
+	script.

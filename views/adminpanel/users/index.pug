@@ -5,13 +5,15 @@ block styles
 
 block breadcrumb
 	ol.breadcrumb
+		li.breadcrumb-item
+			a(href="/dashboard") Dashboard
 		li.breadcrumb-item.active.
-			Dashboard
+			Users
 
 block content
 	div.row
 		div.col-lg-12
-			table#userTable.table.table-condensed.table-bordered
+			table#DataTable.table.table-condensed.table-bordered
 				thead
 					tr
 						td(class="text-center") Username
@@ -24,7 +26,7 @@ block scripts
 
 	script.
 
-		jQuery('#userTable').DataTable({
+		jQuery('#DataTable').DataTable({
 			ordering : false,
 			processing : false,
 			serverSide : true,

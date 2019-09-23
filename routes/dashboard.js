@@ -6,6 +6,7 @@ var express = require('express'),
 
 route.get('/', homeController.index);
 route.get('/articles', articlesController.index);
+route.get('/articles/create', articlesController.create);
 route.get('/users', usersController.index);
 
 module.exports = route;

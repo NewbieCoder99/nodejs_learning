@@ -14,9 +14,10 @@ html(lang="en")
 		div.wrapper
 			include ../includes/dashboards/sidebar.pug
 			div.content
-				nav(aria-label="breadcrumb")
+				nav(aria-label="breadcrumb",style="border-bottom:1px solid #fff;")
 					block breadcrumb
 				div.container-fluid
+					div.v-pb-20
 					block content
 
 		include ../includes/js.pug

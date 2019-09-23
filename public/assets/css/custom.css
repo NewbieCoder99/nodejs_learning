@@ -67,6 +67,9 @@ a:focus {
   color:#717171;
   font-size:1em;
 }
+.v-no-resize {
+  resize:none;
+}
 .v-black-color-text {
   color:#000;
 }
@@ -85,10 +88,12 @@ a:focus {
   color:#717171;
 }
 
+.v-input:active,
 .v-input:focus {
   background-color:#eee;
   border:none;
   color:#717171;
+  box-shadow:none;
 }
 
 #v-login-btn {
