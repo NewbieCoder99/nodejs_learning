@@ -1,6 +1,7 @@
 extends ../../layouts/layout_adminpanel
 
 block styles
+	include ../../includes/datatables-css
 
 block breadcrumb
 	ol.breadcrumb
@@ -8,4 +9,34 @@ block breadcrumb
 			Dashboard
 
 block content
-	h3 Welcome On Users
+	div.row
+		div.col-lg-12
+			table#userTable.table.table-condensed.table-bordered
+				thead
+					tr
+						td(class="text-center") Username
+						td(class="text-center") Email
+				tbody
+
+block scripts
+
+	include ../../includes/datatables-js
+
+	script.
+		console.log('#{process.env.API_URL}');
+		jQuery('#userTable').DataTable({
+			ordering : false,
+			processing : false,
+			serverSide : true,
+			columns : [
+				{
+					data : 'username',
+					name : 'username'
+				},
+				{
+					data : 'email',
+					name : 'email'
+				},
+			],
+			url : "#{process.env.API_URL}/users"
+		});
