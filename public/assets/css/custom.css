@@ -2,6 +2,12 @@ body {
   font-family: sans-serif;
 }
 
+.form-control:active,
+.form-control:focus {
+  box-shadow:none;
+  border:1px solid #ccc;
+}
+
 a:focus {
   outline:none;
 }

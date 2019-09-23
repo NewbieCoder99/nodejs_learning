@@ -1,7 +1,7 @@
 extends ../../layouts/layout_adminpanel
 
 block styles
-	include ../../includes/datatables-css
+	link(href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css", rel="stylesheet")
 
 block breadcrumb
 	ol.breadcrumb
@@ -27,7 +27,7 @@ block content
 									class="form-control v-input",
 									id="title",
 									name="title",
-									placeholder="",
+									placeholder="Write your title ...",
 									required="required",
 									autocomplete="off"
 								)
@@ -41,9 +41,41 @@ block content
 									name="content",
 									required="required"
 								)
+
+						div.form-group.row
+							label(for="category", class="col-sm-2 col-form-label v-label") Category <em class="v-red-color-text">*</em>
+							div.col-sm-10
+								select(
+									class="form-control",
+									id="category",
+									name="categoryId",
+									required="required"
+								)
+									option - Select Category -
+
+						div.form-group.row
+							label(for="image", class="col-sm-2 col-form-label v-label") Image 
+							div.col-sm-10
+								input(
+									type="file",
+									id="image",
+									name="image",
+									required="required"
+								)
+
+				div.card-footer
+					button.btn.btn-primary <i class="fa fa-save"></i> Save
+
 		div.col-lg-4
 			div.card
 				div.card-body
 
 block scripts
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js")
 	script.
+		jQuery(document).ready(function() {
+			jQuery('#content').summernote({
+				placeholder: 'Write your content here ...',
+				height: 150,
+			});
+		});
