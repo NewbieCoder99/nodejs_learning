@@ -6,6 +6,7 @@
 * @Last Modified time: 2018-09-30 01:23:55
 */
 
+const dotenv  = require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');

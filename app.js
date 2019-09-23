@@ -15,17 +15,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
-
 app.use(expressValidator());
 app.use(expressSession({
 	secret : process.env.PASSWORD_SECRET,
 	saveUninitialized: false,
 	resave : false
 }));
-
 app.use('/', web);
 app.use('/dashboard', dashboard);
 app.use('/api', api);

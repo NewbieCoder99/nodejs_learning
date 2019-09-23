@@ -23,11 +23,13 @@ block scripts
 	include ../../includes/datatables-js
 
 	script.
-		console.log('#{process.env.API_URL}');
+
 		jQuery('#userTable').DataTable({
 			ordering : false,
 			processing : false,
 			serverSide : true,
+			buttons : [
+			],
 			columns : [
 				{
 					data : 'username',
@@ -38,5 +40,7 @@ block scripts
 					name : 'email'
 				},
 			],
-			url : "#{process.env.API_URL}/users"
+			ajax : {
+				url : ApiURL + "/users"
+			}
 		});

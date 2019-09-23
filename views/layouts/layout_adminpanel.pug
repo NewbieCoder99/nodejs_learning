@@ -22,6 +22,26 @@ html(lang="en")
 		include ../includes/js.pug
 
 		script.
+
+			/*
+			* Vex Options
+			*/
 			vex.defaultOptions.className = 'vex-theme-default';
+
+			/*
+			* API URL Variable
+			*/
+			var ApiURL = "#{process.env.API_URL}";
+
+			/*
+			* Logout Function
+			*/
+			function logout() {
+				jQuery.get(ApiURL + '/logout', function(response) {
+					if(response.error == 0) {
+						location.replace('/');
+					}
+				});
+			}
 
 		block scripts

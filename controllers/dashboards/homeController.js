@@ -1,3 +1,5 @@
+'use strict';
+
 const _sess = require('../../libraries/getSession');
 const checkSession = require('../../libraries/checkSession');
 

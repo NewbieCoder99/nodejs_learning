@@ -1,7 +1,6 @@
 'use strict';
 
 const 	crypto 	= require('crypto'),
-      	dotenv 	= require('dotenv').config(),
 		model 	= require('../../models'),
 		secret 	= process.env.PASSWORD_SECRET;
 

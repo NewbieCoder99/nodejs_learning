@@ -1,12 +1,10 @@
 exports.test = function(req, res) {
 	if(req.session.userdata == null) {
-		if(req.xhr == true) {
+		if(!req.xhr) {
 			return res.json({
 				error : 1,
-				message : 'Invalid session.'
+				message : 'XHR Request is required.'
 			});
-		} else {
-			res.redirect('/login');
 		}
 	}
 }

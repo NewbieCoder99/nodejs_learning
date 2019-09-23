@@ -1,3 +1,5 @@
+'use strict';
+
 exports.index = function(req, res, next) {
 
 	if(req.session.userdata == null) {
