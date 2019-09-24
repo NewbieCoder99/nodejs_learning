@@ -53,29 +53,57 @@ block content
 								)
 									option - Select Category -
 
-						div.form-group.row
+						div(class="form-group row", style="display:none;")
 							label(for="image", class="col-sm-2 col-form-label v-label") Image 
 							div.col-sm-10
 								input(
 									type="file",
 									id="image",
+									onchange="imgPreview(this)",
 									name="image",
 									required="required"
 								)
 
-				div.card-footer
-					button.btn.btn-primary <i class="fa fa-save"></i> Save
-
 		div.col-lg-4
 			div.card
 				div.card-body
+					center
+						img(
+							src="/assets/img/nophoto.jpg",
+							id="imgPreview",
+							onclick="imageChangeTrigger()",
+							style="cursor:pointer;width:200px;"
+						)
+			div.card
+				div.card-body
+					center
+						button.btn.btn-success <i class="fa fa-save"></i> Save
+						button.btn.btn-success <i class="fa fa-edit"></i> Draft
+						button.btn.btn-success <i class="fa fa-trash"></i> Clear
 
 block scripts
 	script(src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js")
 	script.
+
+		function imgPreview(input) {
+		  if (input.files && input.files[0]) {
+		    var reader = new FileReader();
+		    reader.onload = function (e) {
+		      jQuery('#imgPreview').attr('src', e.target.result);
+		    }
+		    reader.readAsDataURL(input.files[0]);
+		  }
+		}
+
+		function imageChangeTrigger() {
+			jQuery('#image').trigger('click');
+		}
+
 		jQuery(document).ready(function() {
+
 			jQuery('#content').summernote({
 				placeholder: 'Write your content here ...',
 				height: 150,
 			});
+
 		});
